@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const myPizza = new Pizza();
     myPizza.calculatePrice();
     document.getElementById("orderTotal").innerText = myPizza.price;
+
     const pizzaOrderForm = document.getElementById("pizzaOrderForm");
     pizzaOrderForm.addEventListener("submit", (e) => {
         e.preventDefault();
-
+        document.getElementById("orderTotalStyle").setAttribute("class", "hidden");
+        document.getElementById("orderTotalStyle").removeAttribute("class", "hidden");
 
     });
 
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectSize.addEventListener("change", (e) => {
         myPizza.selectSize(e.target.value);
+        myPizza.calculatePrice();
+        document.getElementById("orderTotal").innerText = myPizza.price;
     })
 
     const checkboxArray = document.querySelectorAll(".checkbox");
@@ -29,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 myPizza.removeTopping(name);
             }
+            myPizza.calculatePrice();
+            document.getElementById("orderTotal").innerText = myPizza.price;
         });
     });
 
@@ -57,7 +63,21 @@ Pizza.prototype.selectSize = function (size) {
 }
 
 Pizza.prototype.calculatePrice = function () {
-    this.price = 0;
+    if (this.size === null) {
+        this.price = 0 + getToppingPrice(this);
+    } else if (this.size === "small ($10)") {
+        this.price = 10 + getToppingPrice(this);
+    } else {
+        this.price = 15 + getToppingPrice(this);
+    }
+}
+
+function getToppingPrice(myPizza) {
+    let price = 0;
+    myPizza.toppingList.forEach((topping) => {
+        price += parseFloat(topping.price, 10);
+    });
+    return price;
 }
 
 function Topping(toppingName, toppingPrice) {

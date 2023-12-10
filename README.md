@@ -26,9 +26,11 @@ expected output: Pizza {toppingList: Array(0), price: null, size: null}
 
 describe: Pizza.calculatePrice()
 
-test: it should set price to 0
-code: myPizza.calculatePrice();
-expected output: Pizza {toppingList: Array(0), price: 0, size: null}
+test: it should calculate price based on size and topping choice
+code: myPizza.calculatePrice("small ($10)", "pepperoni ($2.50)");
+expected output: 12.5
+
+
 
 
 describe: Topping()

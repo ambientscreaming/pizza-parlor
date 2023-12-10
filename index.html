@@ -4,7 +4,7 @@
 <head>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/scripts.js"></script>
-    <title>Pizza Parlor</title>
+    <title>cutie pies</title>
 </head>
 
 <body>
@@ -18,22 +18,26 @@
             <h3>select your size:</h3>
             <select id="selectSize">
                 <option> choose size </option>
-                <option> small </option>
-                <option> large </option>
+                <option> small ($10)</option>
+                <option> large ($15)</option>
             </select>
 
             <h3>select your toppings:</h3>
-            <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" class="checkbox" data-price="1.50">
-            <label for="pepperoni">pepperoni</label><br>
-            <input type="checkbox" id="mushrooms" name="mushrooms" value="mushroom" class="checkbox" data-price="2.50">
-            <label for="mushrooms">mushrooms</label><br>
+            <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" class="checkbox" data-price="2.50">
+            <label for="pepperoni">pepperoni ($2.50)</label><br>
+            <input type="checkbox" id="mushrooms" name="mushrooms" value="mushroom" class="checkbox" data-price="1.50">
+            <label for="mushrooms">mushrooms ($1.50)</label><br>
 
             <h3>checkout:</h3>
             <button type="submit">place your order!</button>
         </form>
     </div>
 
-    <div class="orderTotal">
+    <div id="resetOrderButton">
+        <input type="reset" value="new order" onClick="window.location.reload();">
+    </div>
+
+    <div class="hidden" id="orderTotalStyle">
         Your order total is: <span id="orderTotal"></span>
     </div>
 
