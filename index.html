@@ -23,22 +23,39 @@
             </select>
 
             <h3>select your toppings:</h3>
-            <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" class="checkbox" data-price="2.50">
-            <label for="pepperoni">pepperoni ($2.50)</label><br>
-            <input type="checkbox" id="mushrooms" name="mushrooms" value="mushroom" class="checkbox" data-price="1.50">
-            <label for="mushrooms">mushrooms ($1.50)</label><br>
+            <input type="checkbox" id="pepperoni" name="pepperoni" value="pepperoni" class="checkbox" data-price="2.00">
+            <label for="pepperoni">pepperoni ($2)</label><br>
+
+            <input type="checkbox" id="mushrooms" name="mushrooms" value="mushrooms" class="checkbox" data-price="1.00">
+            <label for="mushrooms">mushrooms ($1)</label><br>
+
+            <input type="checkbox" id="sprinkles" name="sprinkles" value="sprinkles" class="checkbox" data-price="1.00">
+            <label for="sprinkles">sprinkles ($1)</label><br>
+
+            <input type="checkbox" id="onions" name="onions" value="onions" class="checkbox" data-price="1.00">
+            <label for="onions">onions ($1)</label><br>
+
+            <input type="checkbox" id="pineapple" name="pineapple" value="pineapple" class="checkbox" data-price="1.00">
+            <label for="pineapple">pineapple ($1)</label><br>
+
+            <input type="checkbox" id="bacon" name="bacon" value="bacon" class="checkbox" data-price="2.00">
+            <label for="bacon">bacon ($2)</label><br>
+
+            <input type="checkbox" id="chocsyrup" name="chocsyrup" value="chocsyrup" class="checkbox" data-price="1.00">
+            <label for="chocsyrup">chocolate syrup ($1)</label><br>
 
             <h3>checkout:</h3>
-            <button type="submit">place your order!</button>
+            <button type="submit">place order</button>
         </form>
-    </div>
-
-    <div id="resetOrderButton">
-        <input type="reset" value="new order" onClick="window.location.reload();">
     </div>
 
     <div class="hidden" id="orderTotalStyle">
         Your order total is: <span id="orderTotal"></span>
+
+        <div class="resetOrderButton">
+            <input type="reset" value="new order" onClick="window.location.reload();">
+        </div>
+
     </div>
 
 </body>
