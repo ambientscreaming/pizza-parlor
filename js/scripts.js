@@ -19,16 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkboxArray.forEach((checkbox) => {
         checkbox.addEventListener("click", (e) => {
-            const type = e.target.value;
+            const name = e.target.value;
             const price = e.target.dataset.price;
             if (e.target.checked) {
-                console.log(type);
-                console.log(price);
-                // add item to topping array
                 const thisTopping = new Topping(name, price);
                 myPizza.addTopping(thisTopping);
             } else {
-                // remove item from topping array.
+                myPizza.removeTopping(name);
             }
         });
     });
@@ -46,6 +43,11 @@ function Pizza() {
 
 Pizza.prototype.addTopping = function (newTopping) {
     this.toppingList.push(newTopping);
+}
+
+Pizza.prototype.removeTopping = function (removedTopping) {
+    const index = this.toppingList.indexOf(removedTopping);
+    this.toppingList.splice(index, 1);
 }
 
 Pizza.prototype.selectSize = function (size) {
