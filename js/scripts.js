@@ -54,8 +54,11 @@ Pizza.prototype.addTopping = function (newTopping) {
 }
 
 Pizza.prototype.removeTopping = function (removedTopping) {
-    const index = this.toppingList.indexOf(removedTopping);
-    this.toppingList.splice(index, 1);
+    for (let i = 0; i < this.toppingList.length; i++) {
+        if (this.toppingList[i].name === removedTopping) {
+            this.toppingList.splice(i, 1);
+        }
+    }
 }
 
 Pizza.prototype.selectSize = function (size) {
