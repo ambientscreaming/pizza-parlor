@@ -1,5 +1,17 @@
+@font-face {
+    font-family: 'kinkee';
+    src: url(../FONTS/KINKEE.TTF) format("truetype");
+}
+
 body {
     text-align: center;
+    background-color: rgb(241, 194, 201);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    font-family: kinkee;
+    font-size: 20pt;
 }
 
 .hidden {
