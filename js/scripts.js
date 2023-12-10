@@ -2,6 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const myPizza = new Pizza();
+    myPizza.calculatePrice();
+    document.getElementById("orderTotal").innerText = myPizza.price;
     const pizzaOrderForm = document.getElementById("pizzaOrderForm");
     pizzaOrderForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -52,6 +54,10 @@ Pizza.prototype.removeTopping = function (removedTopping) {
 
 Pizza.prototype.selectSize = function (size) {
     this.size = size
+}
+
+Pizza.prototype.calculatePrice = function () {
+    this.price = 0;
 }
 
 function Topping(toppingName, toppingPrice) {

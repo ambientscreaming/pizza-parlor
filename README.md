@@ -6,23 +6,29 @@ test: it should create an empty object
 code: const myPizza = new Pizza();
 expected output: Pizza {toppingList: Array(0), price: null, size: null}
 
-describe Pizza.addTopping()
+describe: Pizza.addTopping()
 
 test: it should add topping to toppinglist
 code: myPizza.addTopping(new Topping("pepperoni", 1.5));
 expected output: {toppingList: [Topping {name: "pepperoni", price: 1.5}], price: null, size: null}
 
-describe Pizza.selectSize()
+describe: Pizza.selectSize()
 
 test: it should set the size on pizza
 code: myPizza.selectSize("small");
 expected output: Pizza {toppingList: Array(0), price: null, size: 'small'}
 
-describe Pizza.removeTopping()
+describe: Pizza.removeTopping()
 
 test: it should remove a topping from toppingList
 code: myPizza.removeTopping("pepperoni");
-expected output: {toppingList: Array(0), price: null, size: null}
+expected output: Pizza {toppingList: Array(0), price: null, size: null}
+
+describe: Pizza.calculatePrice()
+
+test: it should set price to 0
+code: myPizza.calculatePrice();
+expected output: Pizza {toppingList: Array(0), price: 0, size: null}
 
 
 describe: Topping()
