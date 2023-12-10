@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    const selectSize = document.getElementById("selectSize");
+
+    selectSize.addEventListener("change", (e) => {
+        myPizza.selectSize(e.target.value);
+    })
+
     const checkboxArray = document.querySelectorAll(".checkbox");
 
     checkboxArray.forEach((checkbox) => {
@@ -42,7 +48,12 @@ Pizza.prototype.addTopping = function (newTopping) {
     this.toppingList.push(newTopping);
 }
 
+Pizza.prototype.selectSize = function (size) {
+    this.size = size
+}
+
 function Topping(toppingName, toppingPrice) {
     this.name = toppingName;
     this.price = toppingPrice;
 }
+

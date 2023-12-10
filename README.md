@@ -7,9 +7,16 @@ code: const myPizza = new Pizza();
 expected output: Pizza {toppingList: Array(0), price: null, size: null}
 
 describe Pizza.addTopping()
+
 test: it should add topping to toppinglist
 code: myPizza.addTopping(new Topping("pepperoni", 1.5));
 expected output: {toppingList: [Topping {name: "pepperoni", price: 1.5}], price: null, size: null}
+
+describe Pizza.selectSize()
+test: it should set the size on pizza
+code: myPizza.selectSize(small);
+expected output: Pizza {toppingList: Array(0), price: null, size: 'small'}
+
 
 describe: Topping()
 
