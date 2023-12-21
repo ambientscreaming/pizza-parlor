@@ -31,24 +31,24 @@ describe: Pizza.calculatePrice()
 
 test: it should calculate the price of just the toppings with no size pizza selected
 code: const myPizza = new Pizza();
-code: myPizza.addTopping(new Topping("pepperoni", 2))
-code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.addTopping(new Topping("pepperoni", 2));
+code: myPizza.addTopping(new Topping("mushrooms", 1));
 code: myPizza.calculatePrice();
 expected output: 3
 
 test: it should calculate the price of a small size pizza
 code: const myPizza = new Pizza();
 code: myPizza.selectSize("small ($10)");
-code: myPizza.addTopping(new Topping("pepperoni", 2))
-code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.addTopping(new Topping("pepperoni", 2));
+code: myPizza.addTopping(new Topping("mushrooms", 1));
 code: myPizza.calculatePrice();
 expected output: 13
 
 test: it should calculate the size of a large size pizza
 code: const myPizza = new Pizza();
 code: myPizza.selectSize("large ($15)");
-code: myPizza.addTopping(new Topping("pepperoni", 2))
-code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.addTopping(new Topping("pepperoni", 2));
+code: myPizza.addTopping(new Topping("mushrooms", 1));
 code: myPizza.calculatePrice();
 expected output: 18
 
