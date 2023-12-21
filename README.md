@@ -10,8 +10,8 @@ describe: Pizza.addTopping()
 
 test: it should add topping to toppinglist
 code: const myPizza = new Pizza();
-code: myPizza.addTopping(new Topping("pepperoni", 1.5));
-expected output: {toppingList: [Topping {name: "pepperoni", price: 1.5}], price: null, size: null}
+code: myPizza.addTopping(new Topping("pepperoni", 2));
+expected output: {toppingList: [Topping {name: "pepperoni", price: 2}], price: null, size: null}
 
 describe: Pizza.selectSize()
 
@@ -31,24 +31,32 @@ describe: Pizza.calculatePrice()
 
 test: it should calculate the price of just the toppings with no size pizza selected
 code: const myPizza = new Pizza();
-code: myPizza.calculatePrice("null", "pepperoni ($2.00)");
-expected output: 2
+code: myPizza.addTopping(new Topping("pepperoni", 2))
+code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.calculatePrice();
+expected output: 3
 
 test: it should calculate the price of a small size pizza
 code: const myPizza = new Pizza();
-code: myPizza.calculatePrice("small ($10)", "pepperoni ($2.00)");
-expected output: 12
+code: myPizza.selectSize("small ($10)");
+code: myPizza.addTopping(new Topping("pepperoni", 2))
+code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.calculatePrice();
+expected output: 13
 
 test: it should calculate the size of a large size pizza
 code: const myPizza = new Pizza();
-code: myPizza.calculatePrice("large ($15)", "pepperoni ($2.00)");
-expected output: 17
+code: myPizza.selectSize("large ($15)");
+code: myPizza.addTopping(new Topping("pepperoni", 2))
+code: myPizza.addTopping(new Topping("mushrooms", 1))
+code: myPizza.calculatePrice();
+expected output: 18
 
 describe: Topping()
 
 test: it should create an object with name and price
-code: const myTopping = new Topping("pepperoni", 1.5);
-expected output: Topping {name: 'pepperoni', price: 1.5}
+code: const myTopping = new Topping("pepperoni", 2);
+expected output: Topping {name: 'pepperoni', price: 2}
 
 # _Cutie Pies Pizzeria_
 
